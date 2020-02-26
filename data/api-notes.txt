@@ -1,0 +1,6 @@
+--------------- :Session Statuses: ---------------
+
+* PENDING - session is in the future and not yet completed
+* ACTIVE - session is currently being entered 
+* OVERDUE - session is in the past and not yet completed
+* FINISHED - session is completed

@@ -1,0 +1,136 @@
+{
+    "Crunch": {
+        "muscleGroups": [ "upper_abdominals", "abdominals" ],
+        "aerobic_intensity": 4
+    },
+    "Crunch With Weight": {
+        "muscleGroups": [ "upper_abdominals", "abdominals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Twist Crunch": {
+        "muscleGroups": [ "abdominals", "obliques", "upper_abdominals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Twist Crunch With Weight": {
+        "muscleGroups": [ "abdominals", "obliques", "upper_abdominals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Side Plank Lifts": {
+        "muscleGroups": [ "abdominals", "obliques" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lying Down Leg Lifts": {
+        "muscleGroups": [ "abdominals", "lower_abdominals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Bench Press": {
+        "muscleGroups": [ "pectorals" ],
+        "aerobic_intensity": 2,
+        "duration": 5
+    },
+    "Incline Bench Press": {
+        "muscleGroups": [ "pectorals", "upper_pectorals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Decline Bench Press": {
+        "muscleGroups": [ "pectorals", "lower_pectorals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lying Down Fly": {
+        "muscleGroups": [ "pectorals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Shoulder Press": {
+        "muscleGroups": [ "shoulders" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Palms In Shoulder Press": {
+        "muscleGroups": [ "shoulders" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lateral Raise (Sideways)": {
+        "muscleGroups": [ "shoulders", "laterals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Deltoid Raise (Front)": {
+        "muscleGroups": [ "deltoids" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lying Down Rear Deltoid Raise": {
+        "muscleGroups": [ "triceps", "shoulders" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lying Down Rear Deltoid Circle": {
+        "muscleGroups": [ "deltoids", "shoulders" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Front Upright Row": {
+        "muscleGroups": [ "upper_back", "trapezius" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Shoulder Shrug": {
+        "muscleGroups": [ "shoulders", "trapezius" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Bicep Curl (Together)": {
+        "muscleGroups": [ "biceps" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Bicep Curl (Alternating)": {
+        "muscleGroups": [ "biceps" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Dips": {
+        "muscleGroups": [ "triceps" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Keeling Tricep Extension": {
+        "muscleGroups": [ "triceps" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Kneeling One Arm Row": {
+        "muscleGroups": [ "triceps", "upper_back" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Dead Lift": {
+        "muscleGroups": [ "lower_back" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Jacknife": {
+        "muscleGroups": [ "lower_back" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Facedown Fly": {
+        "muscleGroups": [ "deltoids", "laterals" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    },
+    "Lying Down Deltoid Raise (Front)": {
+        "muscleGroups": [ "upper_back", "deltoids" ],
+        "aerobic_intensity": 3,
+        "duration": 5
+    }
+}

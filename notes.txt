@@ -31,7 +31,6 @@
 * Session Plan 
 
 --------------- :Actions: ---------------
-1. Store all exercises
 2. Create new session (by selecting specific exercise or muscle groups - feature plan to include intensity preference) 
 3. Begin and generate session report
 4. View past sessions (which include / link to exercise records if completed)

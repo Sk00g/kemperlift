@@ -1,0 +1,40 @@
+------------------------------
+:TITLE: Kemperlift Notes
+:DATE: 2020/02/25 17:21
+:AUTHOR: Scott Kemperman
+------------------------------
+
+--------------- :Muscle Groups: ---------------
+- Upper Abdominals: crunch, crunch with weight  
+- Obliques: cruch with weight and twist, side lifts
+- Lower abdominals: leg lifts
+- Abdominals: above
+- Upper pectorals: incline bench
+- Lower pectorals: decline bench
+- Pectorals: lying fly
+- Shoulders: Should press, palms-in shoulder press
+- Deltoids: Lateral raise (sideways lift)
+- Rear deltoids: bent-over reverse raise, rear deltoid raise (lying down), rear deltoid circle
+- Front deltoids: Deltoid front raise, front upright row (like lifting a kettle ball)
+- Shoulder: should shrug
+- Biceps: together curl, alternating curl
+- Triceps: dips, kneeling extension (one arm at a time)
+- Shoulder blades: squatting rows, kneeling one arm rows (alternating)
+- Lower back: Dead lift, stiff leg dead lift, jacknife thing with weight
+- General back: Lying down flys 
+- Upper back: lyging down deltoid raises
+
+--------------- :Data Types: ---------------
+* Exercise
+* Session
+* Exercise Record
+* Session Plan 
+
+--------------- :Actions: ---------------
+1. Store all exercises
+2. Create new session (by selecting specific exercise or muscle groups - feature plan to include intensity preference) 
+3. Begin and generate session report
+4. View past sessions (which include / link to exercise records if completed)
+5. View stastics like weight increase, muscle group percentage, favorite exercises, ignored exercises, etc.
+6. View schedule of future planned sessions
+7. Generate session plans (repeat future sessions based on 1 - 4 weeks of exercises on repeat, or the same sessions that repeat based on days with allowance for weekend schedules... must be flexible to allow cancellations and sick days, travel, etc.?)

@@ -128,6 +128,7 @@ def create_session():
 def enter_session():
     pass
 
+""" STATES = LIST_VIEW, SESSION_VIEW """
 def view_history():
     pass
 

@@ -2,5 +2,4 @@
 
 * PENDING - session is in the future and not yet completed
 * ACTIVE - session is currently being completed 
-* OVERDUE - session is in the past and not yet completed
 * FINISHED - session is completed

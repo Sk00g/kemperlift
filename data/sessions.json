@@ -1,29 +1,29 @@
 [
   {
-    "timeScheduled": "2020-02-24 19:30",
-    "timeStarted": "2020-02-24 19:12",
-    "timeFinished": "2020-02-24 19:52",
+    "id": "3371416104887269511",
+    "timeScheduled": "2020-FEB-28 19:30",
+    "timeStarted": "",
+    "timeFinished": "",
     "status": "COMPLETED",
     "exercises": [ "Crunch", "Bench Press", "Shoulder Press" ],
-    "completions": {
-      "Crunch": {
-        "timeStarted": "2020-02-24 19:13",
-        "timeFinished": "2020-02-24 19:23",
-        "sets": [
-          { "reps":  20, "weight": null },
-          { "reps":  18, "weight": null },
-          { "reps":  16, "weight": null }
-        ]
-      },
-      "Bench Press": {
-        "timeStarted": "2020-02-24 19:25",
-        "timeFinished": "2020-02-24 19:39",
-        "sets": [
-          { "reps":  12, "weight": 35 },
-          { "reps":  10, "weight": 40 },
-          { "reps":  8, "weight": 45 }
-        ]
-      }
-    }
+    "completions": {}
+  },
+  {
+    "id": "3371416104887269511",
+    "timeScheduled": "2020-FEB-29 19:30",
+    "timeStarted": "",
+    "timeFinished": "",
+    "status": "COMPLETED",
+    "exercises": [ "Dips", "Bicep Curls" ],
+    "completions": {}
+  },
+  {
+    "id": "3371416104887269511",
+    "timeScheduled": "2020-FEB-27 19:30",
+    "timeStarted": "",
+    "timeFinished": "",
+    "status": "COMPLETED",
+    "exercises": [ "Lying Down Fly", "Side Plank Lifts", "Incline Bench Press" ],
+    "completions": {}
   }
 ]

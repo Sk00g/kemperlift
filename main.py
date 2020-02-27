@@ -1,9 +1,10 @@
 import click
 import json
 import utils
+import calendar
 from datetime import datetime, timedelta
 
-DATETIME_FORMAT = "%y-%b-%d %H:%M"
+DATETIME_FORMAT = "%Y-%b-%d %H:%M"
 
 UTF_LEFT = b'\xc3\xa0K'
 UTF_UP = b'\xc3\xa0H'
@@ -123,10 +124,87 @@ def create_session():
         elif state == 'FINISHED':
             click.pause('\n\t<<< Finalized new session of %d exercises on %s...' % (len(choices),
                                                                                     date.strftime(DATETIME_FORMAT)))
+            with open('data/sessions.json', 'r') as file:
+                sessions = json.load(file)
+            with open('data/sessions.json', 'w') as file:
+                sid = hash(frozenset([date.strftime(DATETIME_FORMAT), *choices]))
+                sessions.append(dict(
+                    id=sid,
+                    timeScheduled=date.strftime(DATETIME_FORMAT),
+                    timeStarted="", timeFinished="",
+                    status='PENDING',
+                    exercises=choices,
+                    completions={}
+                ))
+                json.dump(sessions, file)
             return
 
+""" STATES = SELECT_SESSION, SELECT_EXERCISE, SELECT_REPS, SELECT_WEIGHT"""
 def enter_session():
-    pass
+    with open('data/sessions.json', 'r') as file:
+        sessions = json.load(file)
+        sessions.sort(key=lambda s: datetime.strptime(s['timeScheduled'], DATETIME_FORMAT))
+
+    states = ['SELECT_SESSION', 'SELECT_EXERCISE', 'SELECT_REPS', 'SELECT_WEIGHT']
+    state = 'SELECT_SESSION'
+    active_session = None
+    active_exercise = None
+    active_set = None
+
+    while True:
+        click.clear()
+        click.echo(BANNER)
+
+        if active_session:
+            click.echo('\tACTIVE SESSION (%s):\n' % active_session['timeScheduled'])
+            click.echo('\tStarted:\t%s' % active_session['timeStarted'])
+            elapsed = datetime.now() - datetime.strptime(active_session['timeStarted'], DATETIME_FORMAT)
+            click.echo('\tDuration:\t%s' % str(elapsed))
+        if active_exercise:
+            click.echo('\tExercise:\t%s (%d)\n\n' % (active_exercise, len(active_session['completions'][active_exercise])))
+
+        if state == 'SELECT_SESSION':
+            for i in range(len(sessions)):
+                day_id = datetime.strptime(sessions[i]['timeScheduled'], DATETIME_FORMAT).weekday()
+                day_name = calendar.weekheader(9).split()[day_id]
+                click.echo('\t\t%d. - %s %s (%d)' % (i + 1,
+                                                     day_name,
+                                                     sessions[i]['timeScheduled'],
+                                                     len(sessions[i]['exercises'])))
+            click.echo('\n\tActivate Session (ENTER=(1) | #): ', nl=False)
+            recv = input()
+            if recv.isdigit() and 0 < int(recv) <= len(sessions):
+                active_session = sessions[int(recv) - 1]
+                active_session['timeStarted'] = datetime.now().strftime(DATETIME_FORMAT)
+                state = 'SELECT_EXERCISE'
+            elif recv == '':
+                active_session = sessions[0]
+                active_session['timeStarted'] = datetime.now().strftime(DATETIME_FORMAT)
+                state = 'SELECT_EXERCISE'
+
+        elif state == 'SELECT_EXERCISE':
+            exercises = active_session['exercises']
+            for i in range(len(exercises)):
+                click.echo('\t\t(%d) - %s' % (i + 1, exercises[i]))
+            click.echo('\n\tBegin Exercise (ENTER=(1) | #): ', nl=False)
+            recv = input()
+            if recv.isdigit() and 0 < int(recv) <= len(exercises):
+                active_exercise = exercises[int(recv) - 1]
+            elif recv == '':
+                active_exercise = exercises[0]
+
+            if active_exercise:
+                active_session['completions'][active_exercise] = dict(
+                    timeStarted=datetime.now().strftime(DATETIME_FORMAT),
+                    timeFinished="",
+                    sets=[]
+                )
+                state = 'SELECT_REPS'
+
+        elif state == 'SELECT_REPS':
+            pass
+        elif state == 'SELECT_WEIGHT':
+            pass
 
 """ STATES = LIST_VIEW, SESSION_VIEW """
 def view_history():

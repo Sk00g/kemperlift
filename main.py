@@ -5,6 +5,7 @@ import calendar
 from datetime import datetime, timedelta
 
 DATETIME_FORMAT = "%Y-%b-%d %H:%M"
+DATETIME_FULL_FORMAT = "%Y-%b-%d %H:%M:%S"
 
 UTF_LEFT = b'\xc3\xa0K'
 UTF_UP = b'\xc3\xa0H'
@@ -145,23 +146,32 @@ def enter_session():
         sessions = json.load(file)
         sessions.sort(key=lambda s: datetime.strptime(s['timeScheduled'], DATETIME_FORMAT))
 
-    states = ['SELECT_SESSION', 'SELECT_EXERCISE', 'SELECT_REPS', 'SELECT_WEIGHT']
+    with open('data/exercises.json', 'r') as file:
+        exercise_data = json.load(file)
+
     state = 'SELECT_SESSION'
+    matched_session = None
     active_session = None
     active_exercise = None
-    active_set = None
+    next_exercise_id = 0
 
     while True:
         click.clear()
         click.echo(BANNER)
 
         if active_session:
-            click.echo('\tACTIVE SESSION (%s):\n' % active_session['timeScheduled'])
+            click.echo('\tACTIVE SESSION (%s):' % active_session['timeScheduled'])
             click.echo('\tStarted:\t%s' % active_session['timeStarted'])
-            elapsed = datetime.now() - datetime.strptime(active_session['timeStarted'], DATETIME_FORMAT)
-            click.echo('\tDuration:\t%s' % str(elapsed))
-        if active_exercise:
-            click.echo('\tExercise:\t%s (%d)\n\n' % (active_exercise, len(active_session['completions'][active_exercise])))
+            elapsed = datetime.now() - datetime.strptime(active_session['timeStarted'], DATETIME_FULL_FORMAT)
+            click.echo('\tDuration:\t%s:%s' % (int(elapsed.seconds / 60), elapsed.seconds % 60))
+            for exercise in active_session['completions']:
+                click.echo('\n\tExercise:\t%s (%d)' % (exercise, len(active_session['completions'][exercise])))
+                for i in range(len(active_session['completions'][exercise]['sets'])):
+                    aset = active_session['completions'][exercise]['sets'][i]
+                    click.echo('\t\tSet %s: %s' % (i + 1, aset['reps']), nl=False)
+                    click.echo('\t\t%s lbs' % aset['weight'] if aset['weight'] else '')
+
+        click.echo('\n')
 
         if state == 'SELECT_SESSION':
             for i in range(len(sessions)):
@@ -174,37 +184,93 @@ def enter_session():
             click.echo('\n\tActivate Session (ENTER=(1) | #): ', nl=False)
             recv = input()
             if recv.isdigit() and 0 < int(recv) <= len(sessions):
-                active_session = sessions[int(recv) - 1]
-                active_session['timeStarted'] = datetime.now().strftime(DATETIME_FORMAT)
-                state = 'SELECT_EXERCISE'
+                matched_session = sessions[int(recv) - 1]
             elif recv == '':
-                active_session = sessions[0]
-                active_session['timeStarted'] = datetime.now().strftime(DATETIME_FORMAT)
+                matched_session = sessions[0]
+
+            if matched_session:
+                active_session = matched_session.copy()
+                active_session['timeStarted'] = datetime.now().strftime(DATETIME_FULL_FORMAT)
                 state = 'SELECT_EXERCISE'
 
         elif state == 'SELECT_EXERCISE':
+            complete_exercises = [complete_ex for complete_ex in active_session['completions']]
+            if len(complete_exercises) == len(active_session['exercises']):
+                state = 'FINISHED'
+                continue
+
             exercises = active_session['exercises']
             for i in range(len(exercises)):
-                click.echo('\t\t(%d) - %s' % (i + 1, exercises[i]))
-            click.echo('\n\tBegin Exercise (ENTER=(1) | #): ', nl=False)
+                click.echo('\t\t(%d) - %s \t%s' % (i + 1, exercises[i], '*COMPLETE*' if exercises[i] in complete_exercises else ''))
+            click.echo('\n\tBegin Exercise (ENTER=(1) | END | #): ', nl=False)
             recv = input()
+
+            active_exercise = None
             if recv.isdigit() and 0 < int(recv) <= len(exercises):
                 active_exercise = exercises[int(recv) - 1]
             elif recv == '':
-                active_exercise = exercises[0]
+                active_exercise = exercises[next_exercise_id]
 
             if active_exercise:
                 active_session['completions'][active_exercise] = dict(
-                    timeStarted=datetime.now().strftime(DATETIME_FORMAT),
+                    timeStarted=datetime.now().strftime(DATETIME_FULL_FORMAT),
                     timeFinished="",
                     sets=[]
                 )
+                state = 'SELECT_WEIGHT' if exercise_data[active_exercise]['usesWeight'] else 'SELECT_REPS'
+
+            elif recv.lower() == 'end':
+                state = 'FINISHED'
+                continue
+
+        elif state == 'SELECT_WEIGHT':
+            click.echo('\n\tComplete Exercise (ENTER=NEXT | #=Weight): ', nl=False)
+            recv = input()
+            if recv.isdigit() and 0 < int(recv) <= 100:
+                active_session['completions'][active_exercise]['sets'].append(dict(reps=None, weight=int(recv)))
                 state = 'SELECT_REPS'
+            elif recv == '':
+                active_session['completions'][active_exercise]['timeFinished'] = datetime.now().strftime(
+                    DATETIME_FULL_FORMAT)
+                next_exercise_id += 1
+                state = 'SELECT_EXERCISE'
 
         elif state == 'SELECT_REPS':
-            pass
-        elif state == 'SELECT_WEIGHT':
-            pass
+            click.echo("\n\tComplete Exercise (ENTER=NEXT | #=REPS): ", nl=False)
+            recv = input()
+            if recv.isdigit() and 0 < int(recv) <= 1000:
+                current_set = active_session['completions'][active_exercise]['sets'][-1] if \
+                    active_session['completions'][active_exercise]['sets'] else None
+                if not current_set or current_set['reps']:
+                    active_session['completions'][active_exercise]['sets'].append(dict(reps=int(recv), weight=None))
+                else:
+                    current_set['reps'] = int(recv)
+
+                if exercise_data[active_exercise]['usesWeight']:
+                    state = 'SELECT_WEIGHT'
+                else:
+                    state = 'SELECT_REPS'
+            elif recv == '':
+                active_session['completions'][active_exercise]['timeFinished'] = datetime.now().strftime(
+                    DATETIME_FULL_FORMAT)
+                next_exercise_id += 1
+                state = 'SELECT_EXERCISE'
+
+        elif state == 'FINISHED':
+            click.pause('\n\t<<< Finalized session completion on %s...' % active_session['timeStarted'])
+            active_session['timeFinished'] = datetime.now().strftime(DATETIME_FULL_FORMAT)
+
+            with open('data/sessionHistory.json', 'r') as file:
+                session_history = json.load(file)
+            with open('data/sessionHistory.json', 'w') as file:
+                session_history.append(active_session)
+                json.dump(session_history, file)
+
+            with open('data/sessions.json', 'w') as file:
+                sessions.remove(matched_session)
+                json.dump(sessions, file)
+
+            return
 
 """ STATES = LIST_VIEW, SESSION_VIEW """
 def view_history():

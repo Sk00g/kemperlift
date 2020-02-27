@@ -31,9 +31,16 @@
 * Session Plan 
 
 --------------- :Actions: ---------------
-2. Create new session (by selecting specific exercise or muscle groups - feature plan to include intensity preference) 
-3. Begin and generate session report
+2. Create new session by selecting specific exercise or muscle groups - feature plan to include intensity preference 
 4. View past sessions (which include / link to exercise records if completed)
 5. View stastics like weight increase, muscle group percentage, favorite exercises, ignored exercises, etc.
-6. View schedule of future planned sessions
 7. Generate session plans (repeat future sessions based on 1 - 4 weeks of exercises on repeat, or the same sessions that repeat based on days with allowance for weekend schedules... must be flexible to allow cancellations and sick days, travel, etc.?)
+
+
+:LAST UPDATE:		2020/02/27 00:32
+:SYSTEM:			Core
+(Design -> Research -> Prototype -> Write -> Test -> Document)
+:STAGE:				Write
+
+:IMMEDIATE:
+Finished the core activities necessary to create and enter data for sessions, am now only missing the 'view sessions' functionality and the basics will be complete enough to use

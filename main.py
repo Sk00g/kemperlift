@@ -15,7 +15,7 @@ UTF_ENTER = b'\r'
 
 BANNER = """
 -------------------------------------------------------------
------- WELCOME TO KEMPERLIFT v1.0 (%s) ---------
+------ WELCOME TO KEMPERLIFT v1.0 (%s) -------
 -------------------------------------------------------------
 """ % datetime.now().strftime(DATETIME_FORMAT)
 
@@ -208,6 +208,7 @@ def enter_session():
             active_exercise = None
             if recv.isdigit() and 0 < int(recv) <= len(exercises):
                 active_exercise = exercises[int(recv) - 1]
+                next_exercise_id = int(recv) - 1
             elif recv == '':
                 active_exercise = exercises[next_exercise_id]
 
@@ -274,7 +275,45 @@ def enter_session():
 
 """ STATES = LIST_VIEW, SESSION_VIEW """
 def view_history():
-    pass
+    with open('data/sessionHistory.json', 'r') as file:
+        sessions = json.load(file)
+        sessions.sort(key=lambda s: datetime.strptime(s['timeStarted'], DATETIME_FULL_FORMAT))
+        sessions.reverse()
+
+    state = 'LIST_VIEW'
+    selection = None
+
+    while True:
+        click.clear()
+        click.echo(BANNER)
+
+        if state == 'LIST_VIEW':
+            for i in range(len(sessions)):
+                start_time = datetime.strptime(sessions[i]['timeStarted'], DATETIME_FULL_FORMAT)
+                end_time = datetime.strptime(sessions[i]['timeFinished'], DATETIME_FULL_FORMAT)
+                duration = end_time - start_time
+                day_id = datetime.strptime(sessions[i]['timeStarted'], DATETIME_FULL_FORMAT).weekday()
+                day_name = calendar.weekheader(5).split()[day_id].upper()
+                click.echo('\t%d. %s %s (SCHED: %s) Duration: %s (%d)' % (i + 1,
+                                                                         day_name,
+                                                                         sessions[i]['timeStarted'][:-2],
+                                                                         sessions[i]['timeScheduled'],
+                                                                         '%s:%s' % (int(duration.seconds / 60), duration.seconds % 60),
+                                                                         len(sessions[i]['completions'])))
+            click.echo('\n\tView Session (ENTER=MENU | #): ', nl=False)
+            recv = input()
+            if recv.isdigit() and 0 < int(recv) <= len(sessions):
+                selection = sessions[int(recv) - 1]
+                state = 'SESSION_VIEW'
+            elif recv == '':
+                return
+
+        elif state == 'SESSION_VIEW':
+            click.echo(json.dumps(selection, indent=4))
+            click.echo('\n\t<<< Press any key to return to list')
+            click.getchar()
+            selection = None
+            state = 'LIST_VIEW'
 
 ACTIONS = {
     "Enter Session": enter_session,

@@ -37,10 +37,10 @@
 7. Generate session plans (repeat future sessions based on 1 - 4 weeks of exercises on repeat, or the same sessions that repeat based on days with allowance for weekend schedules... must be flexible to allow cancellations and sick days, travel, etc.?)
 
 
-:LAST UPDATE:		2020/02/27 00:32
-:SYSTEM:			Core
+:LAST UPDATE:		2020/02/27 22:45
+:SYSTEM:			CLI Tool
 (Design -> Research -> Prototype -> Write -> Test -> Document)
-:STAGE:				Write
+:STAGE:				Test
 
 :IMMEDIATE:
-Finished the core activities necessary to create and enter data for sessions, am now only missing the 'view sessions' functionality and the basics will be complete enough to use
+Finished the core functionality and ran thorugh it a couple times. This is ready to be used a few times, and if it's awesome move it to the cloud

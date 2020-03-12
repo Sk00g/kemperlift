@@ -70,7 +70,7 @@
         "duration": 5,
         "usesWeight": true
     },
-    "Lateral Raise (Sideways)": {
+    "Reverse Fly": {
         "muscleGroups": [ "shoulders", "laterals" ],
         "aerobic_intensity": 3,
         "duration": 5,
@@ -84,12 +84,6 @@
     },
     "Lying Down Rear Deltoid Raise": {
         "muscleGroups": [ "triceps", "shoulders" ],
-        "aerobic_intensity": 3,
-        "duration": 5,
-        "usesWeight": true
-    },
-    "Lying Down Rear Deltoid Circle": {
-        "muscleGroups": [ "deltoids", "shoulders" ],
         "aerobic_intensity": 3,
         "duration": 5,
         "usesWeight": true
@@ -148,15 +142,15 @@
         "duration": 5,
         "usesWeight": true
     },
-    "Facedown Fly": {
-        "muscleGroups": [ "deltoids", "laterals" ],
+    "Lying Down Deltoid Raise (Front)": {
+        "muscleGroups": [ "upper_back", "deltoids" ],
         "aerobic_intensity": 3,
         "duration": 5,
         "usesWeight": true
     },
-    "Lying Down Deltoid Raise (Front)": {
-        "muscleGroups": [ "upper_back", "deltoids" ],
-        "aerobic_intensity": 3,
+    "Lat Pullover": {
+        "muscleGroups": [ "laterals", "upper_back" ],
+        "aerobic_intensity": 2,
         "duration": 5,
         "usesWeight": true
     }

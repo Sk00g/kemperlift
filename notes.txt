@@ -37,10 +37,17 @@
 7. Generate session plans (repeat future sessions based on 1 - 4 weeks of exercises on repeat, or the same sessions that repeat based on days with allowance for weekend schedules... must be flexible to allow cancellations and sick days, travel, etc.?)
 
 
-:LAST UPDATE:		2020/02/27 22:45
+:LAST UPDATE:		2020/03/11 22:50
 :SYSTEM:			CLI Tool
 (Design -> Research -> Prototype -> Write -> Test -> Document)
 :STAGE:				Test
 
 :IMMEDIATE:
-Finished the core functionality and ran thorugh it a couple times. This is ready to be used a few times, and if it's awesome move it to the cloud
+Ran first usage and only crashed once due to changes in exercise name. Produced a number of ideas out of it:
+1. Voice activation for enter session?
+2. Synthetic speech as feedback (full hands-free)
+3. Superset support
+4. Goal setting on reps?
+5. Errors in entry?
+6. Aeriobic = allow for superset tolerance
+7. Image of muscle groups for session summaries

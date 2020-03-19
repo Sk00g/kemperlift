@@ -1,1 +1,249 @@
-[{"id": "121928376198273619", "timeScheduled": "2020-Feb-24 19:30", "timeStarted": "2020-Feb-24 19:12:00", "timeFinished": "2020-Feb-24 19:52:00", "status": "COMPLETED", "exercises": ["Crunch", "Bench Press", "Shoulder Press"], "completions": {"Crunch": {"timeStarted": "2020-Feb-24 19:13:00", "timeFinished": "2020-Feb-24 19:23:00", "sets": [{"reps": 20, "weight": null}, {"reps": 18, "weight": null}, {"reps": 16, "weight": null}]}, "Bench Press": {"timeStarted": "2020-Feb-24 19:25:00", "timeFinished": "2020-Feb-24 19:39:00", "sets": [{"reps": 12, "weight": 35}, {"reps": 10, "weight": 40}, {"reps": 8, "weight": 45}]}}}, {"id": "3371416104887269511", "timeScheduled": "2020-Feb-27 19:30", "timeStarted": "2020-Feb-27 00:31:01", "timeFinished": "2020-Feb-27 00:31:11", "status": "COMPLETED", "exercises": ["Lying Down Fly", "Side Plank Lifts", "Incline Bench Press"], "completions": {"Lying Down Fly": {"timeStarted": "2020-Feb-27 00:31:02", "timeFinished": "2020-Feb-27 00:31:04", "sets": [{"reps": 10, "weight": 20}]}, "Side Plank Lifts": {"timeStarted": "2020-Feb-27 00:31:05", "timeFinished": "2020-Feb-27 00:31:08", "sets": [{"reps": 21, "weight": null}, {"reps": 15, "weight": null}]}}}, {"id": -365737822, "timeScheduled": "2020-Mar-02 20:15", "timeStarted": "2020-Feb-27 22:40:48", "timeFinished": "2020-Feb-27 22:43:39", "status": "PENDING", "exercises": ["Bench Press", "Crunch", "Lying Down Fly", "Side Plank Lifts", "Palms In Shoulder Press", "Dead Lift", "Decline Bench Press"], "completions": {"Bench Press": {"timeStarted": "2020-Feb-27 22:40:52", "timeFinished": "2020-Feb-27 22:41:11", "sets": [{"reps": 12, "weight": 30}, {"reps": 10, "weight": 35}, {"reps": 8, "weight": 40}]}, "Crunch": {"timeStarted": "2020-Feb-27 22:41:14", "timeFinished": "2020-Feb-27 22:41:20", "sets": [{"reps": 20, "weight": null}, {"reps": 18, "weight": null}, {"reps": 16, "weight": null}]}, "Lying Down Fly": {"timeStarted": "2020-Feb-27 22:41:22", "timeFinished": "2020-Feb-27 22:41:41", "sets": [{"reps": 12, "weight": 20}, {"reps": 10, "weight": 20}, {"reps": 9, "weight": 20}]}, "Side Plank Lifts": {"timeStarted": "2020-Feb-27 22:41:51", "timeFinished": "2020-Feb-27 22:41:56", "sets": [{"reps": 12, "weight": null}, {"reps": 10, "weight": null}]}, "Dead Lift": {"timeStarted": "2020-Feb-27 22:42:10", "timeFinished": "2020-Feb-27 22:42:14", "sets": []}, "Decline Bench Press": {"timeStarted": "2020-Feb-27 22:42:20", "timeFinished": "2020-Feb-27 22:43:31", "sets": [{"reps": 12, "weight": 30}, {"reps": 10, "weight": 35}, {"reps": 8, "weight": 40}]}}}, {"id": -789607013, "timeScheduled": "2020-Mar-11 20:00", "timeStarted": "2020-Mar-11 22:33:01", "timeFinished": "2020-Mar-11 22:41:36", "status": "PENDING", "exercises": ["Bench Press", "Crunch", "Shoulder Press", "Deltoid Raise (Front)", "Reverse Fly", "Dead Lift"], "completions": {"Bench Press": {"timeStarted": "2020-Mar-11 22:33:03", "timeFinished": "2020-Mar-11 22:33:13", "sets": [{"reps": 12, "weight": 30}, {"reps": 10, "weight": 35}, {"reps": 8, "weight": 40}]}, "Crunch": {"timeStarted": "2020-Mar-11 22:33:15", "timeFinished": "2020-Mar-11 22:33:18", "sets": [{"reps": 20, "weight": null}]}, "Shoulder Press": {"timeStarted": "2020-Mar-11 22:33:19", "timeFinished": "2020-Mar-11 22:33:33", "sets": [{"reps": 10, "weight": 25}]}, "Deltoid Raise (Front)": {"timeStarted": "2020-Mar-11 22:33:35", "timeFinished": "2020-Mar-11 22:33:43", "sets": [{"reps": 12, "weight": 10}, {"reps": 10, "weight": 15}]}, "Reverse Fly": {"timeStarted": "2020-Mar-11 22:33:46", "timeFinished": "2020-Mar-11 22:37:55", "sets": [{"reps": 12, "weight": 10}, {"reps": 12, "weight": 10}]}, "Dead Lift": {"timeStarted": "2020-Mar-11 22:37:57", "timeFinished": "2020-Mar-11 22:41:33", "sets": [{"reps": 12, "weight": 40}, {"reps": 1, "weight": 40}]}}}]
+[
+  {
+    "id": -789607013,
+    "timeScheduled": "2020-Mar-11 20:00",
+    "timeStarted": "2020-Mar-11 22:33:01",
+    "timeFinished": "2020-Mar-11 22:41:36",
+    "status": "PENDING",
+    "exercises": [
+      "Bench Press",
+      "Crunch",
+      "Shoulder Press",
+      "Deltoid Raise (Front)",
+      "Reverse Fly",
+      "Dead Lift"
+    ],
+    "completions": {
+      "Bench Press": {
+        "timeStarted": "2020-Mar-11 22:33:03",
+        "timeFinished": "2020-Mar-11 22:33:13",
+        "sets": [
+          { "reps": 12, "weight": 30 },
+          { "reps": 10, "weight": 35 },
+          { "reps": 8, "weight": 40 }
+        ]
+      },
+      "Crunch": {
+        "timeStarted": "2020-Mar-11 22:33:15",
+        "timeFinished": "2020-Mar-11 22:33:18",
+        "sets": [{ "reps": 20, "weight": null }]
+      },
+      "Shoulder Press": {
+        "timeStarted": "2020-Mar-11 22:33:19",
+        "timeFinished": "2020-Mar-11 22:33:33",
+        "sets": [{ "reps": 10, "weight": 25 }]
+      },
+      "Deltoid Raise (Front)": {
+        "timeStarted": "2020-Mar-11 22:33:35",
+        "timeFinished": "2020-Mar-11 22:33:43",
+        "sets": [
+          { "reps": 12, "weight": 10 },
+          { "reps": 10, "weight": 15 }
+        ]
+      },
+      "Reverse Fly": {
+        "timeStarted": "2020-Mar-11 22:33:46",
+        "timeFinished": "2020-Mar-11 22:37:55",
+        "sets": [
+          { "reps": 12, "weight": 10 },
+          { "reps": 12, "weight": 10 }
+        ]
+      },
+      "Dead Lift": {
+        "timeStarted": "2020-Mar-11 22:37:57",
+        "timeFinished": "2020-Mar-11 22:41:33",
+        "sets": [
+          { "reps": 12, "weight": 40 },
+          { "reps": 1, "weight": 40 }
+        ]
+      }
+    }
+  },
+  {
+    "id": -975343632,
+    "timeScheduled": "2020-Mar-13 20:00",
+    "timeStarted": "2020-Mar-13 21:45:15",
+    "timeFinished": "2020-Mar-13 22:27:21",
+    "status": "PENDING",
+    "exercises": [
+      "Incline Bench Press",
+      "Side Plank Lifts",
+      "Decline Bench Press",
+      "Lateral Raise (Sideways)",
+      "Front Upright Row",
+      "Bicep Curl",
+      "Jacknife"
+    ],
+    "completions": {
+      "Incline Bench Press": {
+        "timeStarted": "2020-Mar-13 22:20:16",
+        "timeFinished": "2020-Mar-13 22:20:25",
+        "sets": [
+          { "reps": 12, "weight": 30 },
+          { "reps": 12, "weight": 35 }
+        ]
+      },
+      "Side Plank Lifts": {
+        "timeStarted": "2020-Mar-13 22:20:26",
+        "timeFinished": "2020-Mar-13 22:20:27",
+        "sets": [
+          { "reps": 12, "weight": null },
+          { "reps": 10, "weight": null }
+        ]
+      },
+      "Decline Bench Press": {
+        "timeStarted": "2020-Mar-13 22:20:28",
+        "timeFinished": "2020-Mar-13 22:20:36",
+        "sets": [
+          { "reps": 12, "weight": 30 },
+          { "reps": 10, "weight": 35 },
+          { "reps": 8, "weight": 40 }
+        ]
+      },
+      "Lateral Raise (Sideways)": {
+        "timeStarted": "2020-Mar-13 22:20:38",
+        "timeFinished": "2020-Mar-13 22:21:48",
+        "sets": [
+          { "reps": 12, "weight": 10 },
+          { "reps": 10, "weight": 12 }
+        ]
+      },
+      "Front Upright Row": {
+        "timeStarted": "2020-Mar-13 22:21:51",
+        "timeFinished": "2020-Mar-13 22:25:54",
+        "sets": [
+          { "reps": 12, "weight": 30 },
+          { "reps": 10, "weight": 35 }
+        ]
+      }
+    }
+  },
+  {
+    "id": -1402971878,
+    "timeScheduled": "2020-Mar-15 20:00",
+    "timeStarted": "2020-Mar-15 21:15:16",
+    "timeFinished": "2020-Mar-15 21:53:03",
+    "status": "PENDING",
+    "exercises": [
+      "Shoulder Press",
+      "Bicep Curl (Alternating)",
+      "Dips",
+      "Lying Down Deltoid Raise (Front)",
+      "Lying Down Leg Lifts"
+    ],
+    "completions": {
+      "Shoulder Press": {
+        "timeStarted": "2020-Mar-15 21:52:17",
+        "timeFinished": "2020-Mar-15 21:52:25",
+        "sets": [
+          { "reps": 12, "weight": 20 },
+          { "reps": 10, "weight": 25 },
+          { "reps": 8, "weight": 30 }
+        ]
+      },
+      "Bicep Curl (Alternating)": {
+        "timeStarted": "2020-Mar-15 21:52:26",
+        "timeFinished": "2020-Mar-15 21:52:38",
+        "sets": [
+          { "reps": 12, "weight": 22 },
+          { "reps": 10, "weight": 22 }
+        ]
+      },
+      "Dips": {
+        "timeStarted": "2020-Mar-15 21:52:39",
+        "timeFinished": "2020-Mar-15 21:52:44",
+        "sets": [
+          { "reps": 20, "weight": null },
+          { "reps": 16, "weight": null }
+        ]
+      },
+      "Lying Down Deltoid Raise (Front)": {
+        "timeStarted": "2020-Mar-15 21:52:47",
+        "timeFinished": "2020-Mar-15 21:52:56",
+        "sets": [
+          { "reps": 12, "weight": 20 },
+          { "reps": 10, "weight": 25 },
+          { "reps": 8, "weight": 25 }
+        ]
+      },
+      "Lying Down Leg Lifts": {
+        "timeStarted": "2020-Mar-15 21:52:57",
+        "timeFinished": "2020-Mar-15 21:53:01",
+        "sets": [
+          { "reps": 20, "weight": null },
+          { "reps": 20, "weight": null },
+          { "reps": 16, "weight": null }
+        ]
+      }
+    }
+  },
+  {
+    "id": -381933497,
+    "timeScheduled": "2020-Mar-17 20:00",
+    "timeStarted": "2020-Mar-17 23:44:49",
+    "timeFinished": "2020-Mar-18 00:21:52",
+    "status": "PENDING",
+    "exercises": [
+      "Bench Press",
+      "Crunch",
+      "Shoulder Press (Palms in)",
+      "Deltoid Raise (Front)",
+      "Reverse Fly",
+      "Dead Lift"
+    ],
+    "completions": {
+      "Bench Press": {
+        "timeStarted": "2020-Mar-17 23:44:51",
+        "timeFinished": "2020-Mar-17 23:57:57",
+        "sets": [
+          { "reps": 12, "weight": 35 },
+          { "reps": 10, "weight": 40 },
+          { "reps": 8, "weight": 45 }
+        ]
+      },
+      "Crunch": {
+        "timeStarted": "2020-Mar-17 23:58:06",
+        "timeFinished": "2020-Mar-17 23:58:11",
+        "sets": [
+          { "reps": 20, "weight": null },
+          { "reps": 20, "weight": null },
+          { "reps": 20, "weight": null }
+        ]
+      },
+      "Deltoid Raise (Front)": {
+        "timeStarted": "2020-Mar-17 23:58:18",
+        "timeFinished": "2020-Mar-18 00:04:21",
+        "sets": [
+          { "reps": 12, "weight": 12 },
+          { "reps": 10, "weight": 15 },
+          { "reps": 8, "weight": 15 }
+        ]
+      },
+      "Shoulder Press (Palms in)": {
+        "timeStarted": "2020-Mar-18 00:04:35",
+        "timeFinished": "2020-Mar-18 00:11:20",
+        "sets": [
+          { "reps": 12, "weight": 20 },
+          { "reps": 7, "weight": 30 }
+        ]
+      },
+      "Reverse Fly": {
+        "timeStarted": "2020-Mar-18 00:11:33",
+        "timeFinished": "2020-Mar-18 00:21:37",
+        "sets": [
+          { "reps": 12, "weight": 10 },
+          { "reps": 10, "weight": 12 },
+          { "reps": 9, "weight": 15 }
+        ]
+      },
+      "Dead Lift": {
+        "timeStarted": "2020-Mar-18 00:21:39",
+        "timeFinished": "2020-Mar-18 00:28:41",
+        "sets": [
+            { "reps": 12, "weight": 35 },
+            { "reps": 6, "weight": 40 },
+        ]
+      }
+    }
+  }
+]

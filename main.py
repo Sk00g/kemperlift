@@ -117,7 +117,7 @@ def create_session():
                 click.echo('\t\t(%d) - %s' % (i + 1, list(exercises.keys())[i]))
             click.echo('\n\tSelect Next Exercise (ENTER=FINISHED | #): ', nl=False)
             recv = input()
-            if recv.isdigit() and 0 < int(recv) < len(exercises):
+            if recv.isdigit() and 0 < int(recv) <= len(exercises):
                 choices.append(list(exercises.keys())[int(recv) - 1])
             elif recv == '':
                 stateid += 1

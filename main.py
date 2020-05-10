@@ -167,6 +167,9 @@ def enter_session():
     with open('data/exercises.json', 'r') as file:
         exercise_data = json.load(file)
 
+    with open('data/sessionHistory.json', 'r') as file:
+        session_history = json.load(file)
+
     state = 'SELECT_SESSION'
     matched_session = None
     active_session = None
@@ -191,7 +194,13 @@ def enter_session():
                 complete_ex for complete_ex in active_session['completions']]
             exercises = active_session['exercises']
             for i in range(len(exercises)):
-                weight_suggestion = [12, 15, 17]
+                weight_suggestion = ''
+                if exercise_data[exercises[i]]['usesWeight']:
+                    for sid in range(len(session_history)):
+                        session = session_history[-(sid + 1)]
+                        if exercises[i] in session['completions']:
+                            weight_suggestion = [rep['weight'] for rep in session['completions'][exercises[i]]['sets']]
+                            break
                 click.echo('\t\t(%d) - %s \t%s \t%s' % (i + 1,
                                                    exercises[i],
                                                    weight_suggestion,

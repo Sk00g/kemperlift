@@ -1,46 +1,47 @@
 Day 1:
     4   Bench Press
     10  Deltoid Raise (Front)
-    9   Reverse Fly
-    18  Dead Lift
     20  Lat Pullover
+    18  Dead Lift
+    9   Reverse Fly
     1   Crunch
 
 Day 2:
     5   Incline Bench Press
     14  Lateral Raise (Sideways)
-    6   Decline Bench Press
-    11  Front Upright Row
     2   Side Plank Lifts
+    6   Decline Bench Press
+    21  Bicep Curl (Together)
+    11  Front Upright Row
 
 Day 3:
     7   Shoulder Press
     13  Bicep Curl
-    12  Shoulder Shrug
-    19  Lying Down Deltoid Raise (Front)
-    15  Dips
     3   Lying Down Leg Lifts
+    22  Tricep Bench Press
+    12  Shoulder Shrug
+    17  Kneeling One Arm Row
 
 Day 4:
     4   Bench Press
     10  Deltoid Raise (Front)
-    8   Shoulder Press (Palms in)
-    9   Reverse Fly
-    18  Dead Lift
     1   Crunch
+    18  Dead Lift
+    9   Reverse Fly
+    8   Shoulder Press (Palms in)
 
 Day 5:
     5   Incline Bench Press
     16  Kneeling Tricep Extension
+    2   Side Plank Lifts
     6   Decline Bench Press
     17  Kneeling One Arm Row
     20  Lat Pullover
-    2   Side Plank Lifts
 
 Day 6:
     7   Shoulder Press
     13  Bicep Curl
+    3   Lying Down Leg Lifts
+    22  Tricep Bench Press
     12  Shoulder Shrug
     19  Lying Down Deltoid Raise (Front)
-    15  Dips
-    3   Lying Down Leg Lifts
